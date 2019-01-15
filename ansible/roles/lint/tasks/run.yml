@@ -97,7 +97,8 @@
   when: (ansible_grep_result | success)
 
 - name: lint | run | Exit on ansible-lint playbook parsing errors
-  fail: "Unable to parse ansible-lint - see above"
+  fail:
+    msg: "Unable to parse ansible-lint - see above"
   when: (ansible_grep_result | success)
 
 - name: lint | run | Run ansible-lint voting
